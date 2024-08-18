@@ -1,37 +1,35 @@
 plugins {
     id 'java'
-    id 'io.quarkus'
 }
 
-repositories {
-    mavenCentral()
-    mavenLocal()
+allprojects {
+    group 'claimz'
+    version 'v0'
 }
 
-dependencies {
-    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
-    implementation 'io.quarkus:quarkus-arc'
-    implementation 'io.quarkus:quarkus-rest'
-    testImplementation 'io.quarkus:quarkus-junit5'
-    testImplementation 'io.rest-assured:rest-assured'
-}
+subprojects {
+    apply plugin: 'java'
 
-group 'org'
-version '1.0.0-SNAPSHOT'
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
-}
+    compileJava {
+        options.encoding = 'UTF-8'
+        options.compilerArgs << '-parameters'
+    }
 
-test {
-    systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
-}
-compileJava {
-    options.encoding = 'UTF-8'
-    options.compilerArgs << '-parameters'
-}
+    compileTestJava {
+        options.encoding = 'UTF-8'
+    }
 
-compileTestJava {
-    options.encoding = 'UTF-8'
+    java {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
+
+    test {
+        systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+    }
 }
