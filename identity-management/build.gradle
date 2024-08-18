@@ -5,10 +5,9 @@ plugins {
 
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
-    implementation 'io.quarkus:quarkus-resteasy-jsonb'
-    implementation 'io.quarkus:quarkus-resteasy'
+    implementation 'io.quarkus:quarkus-spring-web'
+    implementation 'io.quarkus:quarkus-spring-di'
 
-    testImplementation 'io.quarkus:quarkus-junit5'
-    testImplementation 'io.rest-assured:rest-assured'
+    implementation 'io.quarkus:quarkus-rest-jackson'
     //implementation(project(":user-module"))
 }

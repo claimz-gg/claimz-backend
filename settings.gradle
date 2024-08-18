@@ -9,4 +9,4 @@ pluginManagement {
     }
 }
 rootProject.name='claimz'
-include 'user-module'
+include 'identity-management'
