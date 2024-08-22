@@ -1,0 +1,4 @@
+COGNITO_USER_POOL=eu-central-1_SoPdydXo5
+COGNITO_CLIENT_ID18844hbk3onu30ovjm18mmkka
+JWT_VERIFY_KEY=https://cognito-idp.eu-central-1.amazonaws.com/eu-central-1_SoPdydXo5/.well-known/jwks.json
+DATABASE_URL=jdbc:postgresql://localhost:5432/local-db
