@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+
+    // Hibernate ORM dependency for shared entities
+    implementation 'io.quarkus:quarkus-hibernate-orm'
+
+    // Optionally, include Lombok or other shared dependencies
+    implementation 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+}
