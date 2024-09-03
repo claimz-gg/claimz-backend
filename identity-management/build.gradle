@@ -5,9 +5,31 @@ plugins {
 
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+
+    // Spring compatibility
     implementation 'io.quarkus:quarkus-spring-web'
     implementation 'io.quarkus:quarkus-spring-di'
+    implementation 'io.quarkus:quarkus-spring-data-jpa'
 
+    // Core Quarkus dependencies for DI and JSON handling
+    implementation 'io.quarkus:quarkus-arc'
     implementation 'io.quarkus:quarkus-rest-jackson'
+
+    // Database access with PostgreSQL and Hibernate ORM
+    implementation 'io.quarkus:quarkus-jdbc-postgresql'
+    implementation 'io.quarkus:quarkus-hibernate-orm'
+
+    // YAML configuration
+    implementation 'io.quarkus:quarkus-config-yaml'
+
+    // Utility libraries
+    implementation 'org.projectlombok:lombok:1.18.32'
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+    implementation 'io.quarkus:quarkus-smallrye-openapi'
+
+    implementation 'org.mapstruct:mapstruct:1.6.0.Beta1'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.0.Beta1'
+
     //implementation(project(":user-module"))
 }

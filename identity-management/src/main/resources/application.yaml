@@ -1,0 +1,15 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/local-db
+    username: user
+    password: password
+  hibernate-orm:
+    database:
+      generation: update
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+  logging:
+    level:
+      org:
+        hibernate: INFO
